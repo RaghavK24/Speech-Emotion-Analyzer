@@ -4,14 +4,22 @@ This project focuses on recognizing emotions from audio files using a Convolutio
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Features](#features)
 - [Data Augmentation](#data-augmentation)
+- [Features](#features)
 - [Model Architecture](#model-architecture)
 - [Acknowledgements](#acknowledgements)
 
 ## Project Overview
 The goal of this project is to classify emotions from audio files. The dataset includes audio recordings labeled with emotions, which are processed and augmented to improve the model's robustness. The features are extracted from the audio data and used to train a CNN model for emotion classification.
 
+## Data Augmentation
+To improve the model's performance, data augmentation techniques are applied:
+- **Noise Injection**: Adding random noise to the audio signal.
+- **Time Stretching**: Stretching the audio signal in time.
+- **Pitch Shifting**: Changing the pitch of the audio signal.
+- **Time Shifting**: Shifting the audio signal in time.
+
+  
 ## Features
 The following features are extracted from the audio files:
 - Zero Crossing Rate
@@ -20,12 +28,6 @@ The following features are extracted from the audio files:
 - RMS (Root Mean Square) value
 - MelSpectrogram
 
-## Data Augmentation
-To improve the model's performance, data augmentation techniques are applied:
-- **Noise Injection**: Adding random noise to the audio signal.
-- **Time Stretching**: Stretching the audio signal in time.
-- **Pitch Shifting**: Changing the pitch of the audio signal.
-- **Time Shifting**: Shifting the audio signal in time.
 
 ## Model Architecture
 The model is a Convolutional Neural Network (CNN) with the following layers:
