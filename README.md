@@ -16,17 +16,27 @@ The goal of this project is to classify emotions from audio files. The dataset i
 To improve the model's performance, data augmentation techniques are applied:
 - **Noise Injection**: Adding random noise to the audio signal.
 - **Time Stretching**: Stretching the audio signal in time.
-- **Pitch Shifting**: Changing the pitch of the audio signal.
 - **Time Shifting**: Shifting the audio signal in time.
 
   
 ## Features
+
 The following features are extracted from the audio files:
-- Zero Crossing Rate
-- Chroma_stft
-- MFCC (Mel Frequency Cepstral Coefficients)
-- RMS (Root Mean Square) value
-- MelSpectrogram
+
+### MFCC (Mel Frequency Cepstral Coefficients)
+
+- **MFCCs** are coefficients that represent the short-term power spectrum of a sound. They are derived from a type of cepstral representation of the audio clip.
+- **Purpose**: MFCCs are used to represent the power spectrum of the sound, providing a compact representation of the audio signal.
+- **Calculation**: 
+  - The audio signal is divided into short overlapping windows.
+  - For each window, the power spectrum is computed.
+  - The power spectrum is then converted to the Mel scale using a filter bank.
+  - The logarithm of the Mel spectrum is taken.
+  - Finally, the discrete cosine transform (DCT) is applied to the log Mel spectrum to obtain the MFCCs.
+- **Application**: MFCCs are commonly used in speech and audio processing, such as speech recognition, speaker identification, and audio classification, due to their ability to capture the timbral aspects of sound.
+- **Implementation**: Typically, 13 to 40 MFCCs are extracted per frame, and these coefficients are used as features for further processing in the machine learning model.
+
+
 
 
 ## Model Architecture
